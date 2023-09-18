@@ -1,10 +1,14 @@
 import './App.scss';
-import { Button } from '@mui/material';
+import { ThemeProvider, Button } from '@mui/material';
+import theme from './styles/theme';
 
 function App() {
   return (
     <div className='App'>
-      <Button>Click me</Button>
+      <ThemeProvider theme={theme}>
+        <Button color='primary'>Click me</Button>
+        <Button color='secondary'>Click me</Button>
+      </ThemeProvider>
     </div>
   );
 }
