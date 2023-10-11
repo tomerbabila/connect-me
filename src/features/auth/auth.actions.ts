@@ -1,10 +1,11 @@
 import axios from 'axios';
 import qs from 'qs';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { BodyModel } from './auth.model';
 
 const backendURL = 'https://accounts.spotify.com';
 
-export const getToken = createAsyncThunk(
+export const getToken = createAsyncThunk<string, BodyModel>(
   'auth/token',
   async (body, { rejectWithValue }) => {
     try {
